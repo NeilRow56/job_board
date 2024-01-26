@@ -8,10 +8,11 @@ import { useRouter } from 'next/navigation'
 import { useAction } from '@/hooks/use-action'
 import { createJob } from '@/actions/create-job'
 import { toast } from 'sonner'
+import { Job } from '@prisma/client'
 
-type Props = {}
+type JobFormProps = {}
 
-const JobForm = (props: Props) => {
+const JobForm = () => {
   const router = useRouter()
   const { execute, fieldErrors } = useAction(createJob, {
     onSuccess: (data) => {
